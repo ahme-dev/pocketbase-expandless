@@ -1,8 +1,9 @@
 {
 	"name": "pocketbase-expandless",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"main": "main.js",
 	"description": "",
+	"type": "module",
 	"keywords": [
 		"pocketbase"
 	],
