@@ -1,0 +1,15 @@
+{
+	"name": "pocketbase-expandless",
+	"version": "0.1.0",
+	"main": "main.js",
+	"description": "",
+	"repository": {
+		"url": "https://github.com/ahmeddots/pocketbase-expandless.git"
+	},
+	"author": {
+		"name": "Ahmed K. A.",
+		"email": "ahmadkabdullah@pm.me",
+		"url": "https://ahmed.systems"
+	},
+	"license": "MIT"
+}
