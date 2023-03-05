@@ -3,19 +3,8 @@
 	"version": "0.3.0",
 	"description": "A library to get rid of expands in pocketbase",
 	"type": "module",
-	"keywords": [
-		"pocketbase"
-	],
 	"scripts": {
 		"build": "rm -rf dist && tsc && tsc --build tsconfig.es5.json"
-	},
-	"repository": {
-		"url": "https://github.com/ahmeddots/pocketbase-expandless.git"
-	},
-	"author": {
-		"name": "Ahmed K. A.",
-		"email": "ahmadkabdullah@pm.me",
-		"url": "https://ahmed.systems"
 	},
 	"license": "MIT",
 	"dependencies": {

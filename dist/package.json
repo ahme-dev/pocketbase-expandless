@@ -13,9 +13,6 @@
 		"pocketbase",
 		"utilities"
 	],
-	"scripts": {
-		"build": "rm -rf dist && tsc && tsc --build tsconfig.es5.json"
-	},
 	"author": {
 		"name": "Ahmed K. A.",
 		"email": "ahmadkabdullah@pm.me",
