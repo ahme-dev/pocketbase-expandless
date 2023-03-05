@@ -3,6 +3,9 @@
 	"version": "0.2.1",
 	"main": "main.js",
 	"description": "",
+	"keywords": [
+		"pocketbase"
+	],
 	"repository": {
 		"url": "https://github.com/ahmeddots/pocketbase-expandless.git"
 	},
