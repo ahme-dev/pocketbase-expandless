@@ -1,7 +1,7 @@
 import { Record } from "pocketbase";
 
 // A Record type without the expand property
-type RecordExpandless = Omit<Record, "expand">;
+export type RecordExpandless = Omit<Record, "expand">;
 
 // takes in a record or a list of records
 // recursivly moves all the properties in the expand property to the record itself
@@ -15,7 +15,6 @@ export function moveExpandsInline(record: Record[] | Record): RecordExpandless {
 	if (Array.isArray(newRecord)) {
 		// go through each record
 		for (let i = 0; i < newRecord.length; i++) {
-			console.log("Running in array");
 			// run expandRelations on each record
 			newRecord[i] = moveExpandsInline(newRecord[i]) as Record;
 		}
