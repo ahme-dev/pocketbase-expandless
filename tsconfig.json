@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
-		"module": "ES6",
+		"module": "ESNext",
 		"target": "ES5",
 		"declaration": true,
-		"outDir": "./dist/lib/es6",
+		"outDir": "./dist/lib/esnext",
 		"moduleResolution": "node"
 	},
 	"include": ["src/**/*"]

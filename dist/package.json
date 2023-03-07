@@ -1,9 +1,9 @@
 {
 	"name": "pocketbase-expandless",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"description": "A library to get rid of expands in pocketbase",
 	"main": "./lib/es5/main.js",
-	"module": "./lib/es6/main.js",
+	"module": "./lib/esnext/main.js",
 	"sideEffects": false,
 	"repository": {
 		"type": "git",
