@@ -2,6 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/pocketbase-expandless?label=latest&style=flat-square&color=red)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/pocketbase-expandless?label=minified&style=flat-square)
+![npm](https://img.shields.io/npm/dm/pocketbase-expandless?color=indigo&style=flat-square)
 
 This library is made to remove expands from pocketbase records, and instead set the properties inside of them as the record's properties.
 
