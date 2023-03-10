@@ -1,16 +1,20 @@
 {
 	"name": "pocketbase-expandless",
-	"version": "0.3.3",
+	"version": "0.3.4",
 	"description": "A library to get rid of expands in pocketbase",
 	"type": "module",
 	"scripts": {
-		"build": "rm -rf dist/lib && tsc && tsc --build tsconfig.es5.json"
+		"build": "rm -rf dist/lib && tsc && tsc --build tsconfig.es5.json",
+		"test": "vitest",
+		"coverage": "vitest run --coverage"
 	},
 	"license": "MIT",
 	"dependencies": {
 		"pocketbase": "^0.12.0"
 	},
 	"devDependencies": {
-		"typescript": "^4.9.5"
-	}
+		"typescript": "^4.9.5",
+		"vitest": "^0.29.2"
+	},
+	"exclude": ["tests/**/*"]
 }

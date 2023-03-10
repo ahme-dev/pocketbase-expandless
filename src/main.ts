@@ -1,5 +1,13 @@
 import { Record } from "pocketbase";
 
+// A type for testing without making a Record (if that is even possible)
+export type RecordTest = {
+	name: string;
+	expand: {
+		[key: string]: RecordTest | RecordTest[];
+	};
+};
+
 // A Record type without the expand property
 export type RecordExpandless = Omit<Record, "expand">;
 
@@ -7,7 +15,9 @@ export type RecordExpandless = Omit<Record, "expand">;
 // recursivly moves all the properties in the expand property to the record itself
 // i.e product.expand.category_id -> product.category_id
 // returns a record or a list of records
-export function moveExpandsInline(record: Record[] | Record): RecordExpandless {
+export function moveExpandsInline(
+	record: Record[] | Record | RecordTest | RecordTest[],
+): RecordExpandless {
 	// clone record
 	let newRecord: RecordExpandless = JSON.parse(JSON.stringify(record));
 
@@ -20,8 +30,11 @@ export function moveExpandsInline(record: Record[] | Record): RecordExpandless {
 		}
 	}
 
-	// if has no expand, return as is
-	if (!("expand" in newRecord)) return newRecord;
+	// if has no expands, return as is
+	if (Object.keys(newRecord.expand).length === 0) {
+		delete newRecord.expand;
+		return newRecord;
+	}
 
 	// otherwise go through each relation
 	for (const key in newRecord.expand) {
