@@ -17,7 +17,7 @@ export type RecordExpandless = Omit<Record, "expand">;
 // returns a record or a list of records
 export function moveExpandsInline(
 	record: Record[] | Record | RecordTest | RecordTest[],
-): RecordExpandless {
+): RecordExpandless[] {
 	// clone record
 	let newRecord: RecordExpandless = JSON.parse(JSON.stringify(record));
 
@@ -26,14 +26,19 @@ export function moveExpandsInline(
 		// go through each record
 		for (let i = 0; i < newRecord.length; i++) {
 			// run expandRelations on each record
-			newRecord[i] = moveExpandsInline(newRecord[i]) as Record;
+			newRecord[i] = moveExpandsInline(
+				newRecord[i] as Record,
+			) as RecordExpandless;
 		}
+
+		// return early if an array
+		return newRecord;
 	}
 
-	// if has no expands, return as is
+	// if has no expands, return as is but as array
 	if (Object.keys(newRecord.expand).length === 0) {
 		delete newRecord.expand;
-		return newRecord;
+		return [newRecord];
 	}
 
 	// otherwise go through each relation
@@ -42,12 +47,12 @@ export function moveExpandsInline(
 		newRecord[key] = newRecord.expand[key];
 
 		// run expandRelations on expanded record to find nested expand record
-		newRecord[key] = moveExpandsInline(newRecord[key]) as Record;
+		newRecord[key] = moveExpandsInline(newRecord[key]);
 	}
 
 	// remove expand field from record
 	delete newRecord.expand;
 
 	// return the record in the end
-	return newRecord;
+	return [newRecord];
 }
